@@ -8,7 +8,7 @@ export interface ButtonBaseProps
   onClick: () => void;
   size?: ButtonSize;
   disabled?: boolean;
-  type?:string;
+  type?:"submit" | "reset" | "button" | undefined;
 }
 
 export interface StandardButtonProps extends ButtonBaseProps {
