@@ -8,7 +8,6 @@ export interface ButtonBaseProps
   onClick: () => void;
   size?: ButtonSize;
   disabled?: boolean;
-  type?:"submit" | "reset" | "button" | undefined;
 }
 
 export interface StandardButtonProps extends ButtonBaseProps {
@@ -61,7 +60,6 @@ const Button = (props: ButtonProps) => {
     disabled = false,
     label,
     style,
-    type,
     ...restProps
   } = props;
 
@@ -83,7 +81,6 @@ const Button = (props: ButtonProps) => {
           gap: "8px",
         }}
         disabled={disabled}
-        type={type}
         {...restProps}
       >
         {icon && React.isValidElement(icon) ? icon : null}
@@ -101,7 +98,6 @@ const Button = (props: ButtonProps) => {
         ...style,
       }}
       disabled={disabled}
-      type={type}
       {...restProps}
     >
       {label}
